@@ -1,0 +1,218 @@
+/* Enhanced gradient backgrounds */
+.gradient-blue {
+  background: linear-gradient(135deg, rgba(0, 112, 243, 0.05) 0%, rgba(0, 112, 243, 0.2) 100%);
+}
+
+.gradient-green {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(16, 185, 129, 0.2) 100%);
+}
+
+.gradient-amber {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.05) 0%, rgba(245, 158, 11, 0.2) 100%);
+}
+
+.gradient-red {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.05) 0%, rgba(239, 68, 68, 0.2) 100%);
+}
+
+/* Card hover effects */
+.chart-card {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.chart-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Animated icons */
+.icon-pulse {
+  animation: icon-pulse 2s infinite;
+}
+
+@keyframes icon-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Animated data points */
+.data-point {
+  transition: all 0.3s ease;
+}
+
+.data-point:hover {
+  filter: brightness(1.2);
+  transform: scale(1.2);
+}
+
+/* Tooltip animations */
+.tooltip {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.tooltip-trigger:hover .tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Glowing effect for highlights */
+.glow {
+  filter: drop-shadow(0 0 8px rgba(0, 112, 243, 0.5));
+}
+
+/* 3D effect for buttons */
+.button-3d {
+  transition: all 0.2s ease;
+  transform: translateY(0);
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2);
+}
+
+.button-3d:active {
+  transform: translateY(2px);
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Animated background pattern */
+.bg-pattern {
+  background-image: radial-gradient(circle at 25px 25px, rgba(0, 112, 243, 0.15) 2%, transparent 0%),
+    radial-gradient(circle at 75px 75px, rgba(0, 112, 243, 0.1) 2%, transparent 0%);
+  background-size: 100px 100px;
+  animation: patternMove 60s linear infinite;
+}
+
+@keyframes patternMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Animated value counters */
+.value-counter {
+  counter-reset: value 0;
+  animation: count-up 2s forwards;
+}
+
+@keyframes count-up {
+  to {
+    counter-increment: value var(--target-value);
+  }
+}
+
+.value-counter::after {
+  content: counter(value);
+}
+
+/* Floating elements */
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Shine effect */
+.shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  animation: shine 6s infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: rotate(30deg) translateX(-100%);
+  }
+  20%,
+  100% {
+    transform: rotate(30deg) translateX(100%);
+  }
+}
+
+/* Blinking dots for loading states */
+.loading-dots::after {
+  content: "...";
+  animation: dots 1.5s infinite;
+}
+
+@keyframes dots {
+  0%,
+  20% {
+    content: ".";
+  }
+  40% {
+    content: "..";
+  }
+  60%,
+  100% {
+    content: "...";
+  }
+}
+
+/* Improved chart tooltips */
+.chart-tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  pointer-events: none;
+  z-index: 100;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translate(-50%, -100%);
+  margin-top: -8px;
+  white-space: nowrap;
+}
+
+.chart-tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid rgba(0, 0, 0, 0.8);
+}

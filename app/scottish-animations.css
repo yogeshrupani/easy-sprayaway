@@ -1,0 +1,189 @@
+/* Scottish-themed animations */
+
+@keyframes tartan-wave {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+.tartan-bg {
+  background-image: linear-gradient(
+    45deg,
+    rgba(0, 94, 184, 0.05) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(0, 94, 184, 0.05) 50%,
+    rgba(0, 94, 184, 0.05) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 20px 20px;
+  animation: tartan-wave 15s linear infinite;
+}
+
+@keyframes highland-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.highland-float {
+  animation: highland-float 3s ease-in-out infinite;
+}
+
+@keyframes thistle-bloom {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.thistle-bloom {
+  animation: thistle-bloom 0.5s ease-out forwards;
+}
+
+@keyframes loch-ripple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 94, 184, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(0, 94, 184, 0);
+  }
+}
+
+.loch-ripple {
+  animation: loch-ripple 1.5s infinite;
+}
+
+@keyframes bagpipe-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.bagpipe-pulse {
+  animation: bagpipe-pulse 2s ease-in-out infinite;
+}
+
+/* Scottish-themed utility classes */
+
+.text-thistle {
+  color: #8a2be2;
+}
+
+.bg-thistle {
+  background-color: #8a2be2;
+}
+
+.text-saltire {
+  color: #005eb8;
+}
+
+.bg-saltire {
+  background-color: #005eb8;
+}
+
+.text-heather {
+  color: #9966cc;
+}
+
+.bg-heather {
+  background-color: #9966cc;
+}
+
+.text-highlands {
+  color: #2e8b57;
+}
+
+.bg-highlands {
+  background-color: #2e8b57;
+}
+
+.text-granite {
+  color: #676767;
+}
+
+.bg-granite {
+  background-color: #676767;
+}
+
+/* Scottish-themed gradients */
+
+.bg-saltire-gradient {
+  background: linear-gradient(135deg, #005eb8, #0077cc);
+}
+
+.bg-thistle-gradient {
+  background: linear-gradient(135deg, #8a2be2, #9966cc);
+}
+
+.bg-highlands-gradient {
+  background: linear-gradient(135deg, #2e8b57, #3cb371);
+}
+
+.bg-heather-gradient {
+  background: linear-gradient(135deg, #9966cc, #b19cd9);
+}
+
+.bg-tartan-gradient {
+  background: linear-gradient(45deg, #005eb8, #2e8b57, #8a2be2, #676767);
+}
+
+/* Scottish-themed borders */
+
+.border-saltire {
+  border-color: #005eb8;
+}
+
+.border-thistle {
+  border-color: #8a2be2;
+}
+
+.border-highlands {
+  border-color: #2e8b57;
+}
+
+.border-heather {
+  border-color: #9966cc;
+}
+
+.border-granite {
+  border-color: #676767;
+}
+
+/* Scottish-themed shadows */
+
+.shadow-saltire {
+  box-shadow: 0 4px 6px rgba(0, 94, 184, 0.2);
+}
+
+.shadow-thistle {
+  box-shadow: 0 4px 6px rgba(138, 43, 226, 0.2);
+}
+
+.shadow-highlands {
+  box-shadow: 0 4px 6px rgba(46, 139, 87, 0.2);
+}
+
+.shadow-heather {
+  box-shadow: 0 4px 6px rgba(153, 102, 204, 0.2);
+}
+
+.shadow-granite {
+  box-shadow: 0 4px 6px rgba(103, 103, 103, 0.2);
+}
