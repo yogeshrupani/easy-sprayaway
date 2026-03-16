@@ -650,7 +650,8 @@ export default function Home() {
         </section>
       </EnhancedErrorBoundary>
 
-      {/* Finance Calculator Section */}
+      {/* Finance Calculator Section - HIDDEN: Partnership ended, may re-enable with new provider */}
+      {/* 
       <EnhancedErrorBoundary
         componentName="Finance Calculator Section"
         fallback={
@@ -679,10 +680,6 @@ export default function Home() {
             <div className="max-w-6xl mx-auto px-4 md:px-8">
               <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-white/20 overflow-hidden">
                 <div className="bg-gradient-to-r from-slate-800 to-slate-700 p-8 md:p-12 text-white text-center relative overflow-hidden">
-                  {/* Clean background accent */}
-                  
-
-                  {/* Minimal decorative elements */}
                   <div className="absolute top-4 right-4 w-20 h-20 bg-white/5 rounded-full"></div>
                   <div className="absolute bottom-4 left-4 w-12 h-12 bg-white/5 rounded-full"></div>
 
@@ -794,6 +791,7 @@ export default function Home() {
           </div>
         </section>
       </EnhancedErrorBoundary>
+      */}
 
       {/* Before & After Section */}
       <EnhancedErrorBoundary
