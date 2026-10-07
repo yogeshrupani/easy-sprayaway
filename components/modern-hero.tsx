@@ -100,7 +100,7 @@ export default function ModernHero() {
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full">
         <Image
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-06-11%20at%2019.49.49-Ok7HvXVUfETuUEn3qFFdg37zbyrqtz.jpeg"
+          src="/images/hero-home.jpeg"
           alt="Cosy home comfort - feet in warm socks by a fireplace, showing the warmth and comfort Easy-Sprayaway's insulation services provide"
           fill
           priority
