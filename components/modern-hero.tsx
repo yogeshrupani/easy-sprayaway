@@ -68,7 +68,7 @@ export default function ModernHero() {
 
     try {
       // Submit to API endpoint
-      const response = await fetch("/api/submit-enquiry", {
+      const response = await fetch("/api/submit-contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
