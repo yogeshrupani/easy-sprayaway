@@ -279,59 +279,47 @@ export async function POST(request: NextRequest) {
   try {
     const data = await request.json()
 
-    // Validate required fields
-    if (!data.name || !data.email || !data.phone || !data.service || !data.message) {
-      return NextResponse.json({ success: false, error: "Missing required fields" }, { status: 400 })
+    if (!data.name || !data.phone) {
+      return NextResponse.json(
+        { success: false, error: "Name and phone are required" },
+        { status: 400 }
+      )
     }
 
-    const transporter = nodemailer.createTransport({
-      host: SMTP_HOST,
-      port: SMTP_PORT,
-      secure: SMTP_PORT === 465, // true for 465, false for other ports
-      auth: {
-        user: SMTP_USER,
-        pass: SMTP_PASS,
+    const response = await fetch("https://formspree.io/f/xppqpbap", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
       },
+      body: JSON.stringify({
+        ...data,
+        email: data.email || "",
+        source: data.formType || "Easy Spray Away Website",
+      }),
     })
 
-    await transporter.sendMail({
-      from: `Easy-Sprayaway Website <${FROM_EMAIL}>`,
-      to: RECIPIENT_EMAIL,
-      subject: `📞 Contact Form: ${data.service} - ${data.name} (${data.postcode})`,
-      html: generateContactAdminEmailHTML(data),
-      replyTo: data.email,
-    })
+    if (!response.ok) {
+      console.error("Formspree submission failed:", response.status)
 
-    await transporter.sendMail({
-      from: `Easy-Sprayaway <${FROM_EMAIL}>`,
-      to: data.email,
-      subject: `Thank you for contacting Easy-Sprayaway`,
-      html: generateCustomerConfirmationHTML(data),
-    })
+      return NextResponse.json(
+        { success: false, error: "Unable to submit enquiry" },
+        { status: 502 }
+      )
+    }
 
-    // Log form submission
-    console.log("📝 Contact Form Submission (via SMTP):", {
-      name: data.name,
-      email: data.email,
-      phone: data.phone,
-      service: data.service,
-      postcode: data.postcode,
-      timestamp: new Date().toISOString(),
-    })
+    console.log("Enquiry accepted by Formspree")
 
     return NextResponse.json({
       success: true,
-      message: "Contact form submitted successfully! We'll be in touch shortly.",
+      message: "Thank you! Your enquiry has been submitted successfully.",
     })
   } catch (error) {
-    console.error("Error processing contact form with SMTP:", error)
-    const errorMessage = error instanceof Error ? error.message : "An unknown error occurred"
+    console.error("Enquiry submission error:", error)
+
     return NextResponse.json(
-      {
-        success: false,
-        error: `Failed to process your request. Please try again or call us at 0800 433 2068. Error: ${errorMessage}`,
-      },
-      { status: 500 },
+      { success: false, error: "Something went wrong. Please try again." },
+      { status: 500 }
     )
   }
 }
