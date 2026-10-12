@@ -163,6 +163,13 @@ export default function Footer() {
                   <span className="group-hover:translate-x-1 transition-transform">SuperQuilt Insulation</span>
                 </Link>
                 <Link
+                  href="/loft-insulation-glasgow"
+                  className="text-white/80 hover:text-accent transition-colors flex items-center group"
+                >
+                  <ArrowRight className="mr-2 h-3.5 w-3.5 text-accent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <span className="group-hover:translate-x-1 transition-transform">Loft Insulation Glasgow</span>
+                </Link>
+                <Link
                   href="/services#roof-cleaning"
                   className="text-white/80 hover:text-accent transition-colors flex items-center group"
                 >
