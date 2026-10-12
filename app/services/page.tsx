@@ -1,6 +1,9 @@
 import ServicesPageClient from "./ServicesPageClient"
 
 export const metadata = {
+  alternates: {
+    canonical: "/services",
+  },
   title: "Professional Home Services Scotland | SuperQuilt Insulation & Cleaning",
   description:
     "Premium SuperQuilt loft insulation, sheep wool insulation, roof cleaning, and exterior maintenance services across Scotland. Expert installation, 10-year warranties, free surveys. Serving Glasgow, Edinburgh, Aberdeen, Perth, Inverness, Dundee.",
