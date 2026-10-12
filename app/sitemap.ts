@@ -21,6 +21,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://www.easy-sprayaway.co.uk/loft-insulation-paisley",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: "https://www.easy-sprayaway.co.uk/about",
       lastModified: new Date(),
       changeFrequency: "yearly",
