@@ -5,6 +5,9 @@ import { Check, Users, Gift, Banknote, ArrowRight } from "lucide-react"
 import ReferralFormWrapper from "./referral-form-wrapper"
 
 export const metadata = {
+  alternates: {
+    canonical: "/refer-a-friend",
+  },
   title: "Refer a Friend | £250 Reward | Easy-Sprayaway",
   description:
     "Refer a friend to Easy-Sprayaway and earn a £250 reward when they complete a project with us. No limit on referrals - earn rewards for each successful referral!",
