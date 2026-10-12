@@ -1,3 +1,13 @@
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Terms of Service",
+  description: "Terms of Service for Easy-Sprayaway, covering our loft insulation, roof cleaning and exterior cleaning services.",
+  alternates: {
+    canonical: "/terms-of-service",
+  },
+}
+
 const TermsOfServicePage = () => {
   return (
     <div className="container mx-auto py-8">
