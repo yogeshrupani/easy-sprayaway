@@ -11,6 +11,7 @@ import CookieConsentPopup from "@/components/cookie-consent"
 import ScrollToTop from "@/components/scroll-to-top"
 import { FloatingContactForm } from "@/components/floating-contact-form"
 import { Suspense } from "react"
+import Script from "next/script"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -49,14 +50,10 @@ export const metadata: Metadata = {
     telephone: false,
   },
   metadataBase: new URL("https://www.easy-sprayaway.co.uk"),
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     title: "Easy-Sprayaway | SuperQuilt Loft Insulation & Home Services Scotland",
     description:
       "Professional SuperQuilt loft insulation, roof cleaning, and property maintenance services across Scotland. Family-run business since 2016.",
-    url: "https://www.easy-sprayaway.co.uk",
     siteName: "Easy-Sprayaway",
     locale: "en_GB",
     type: "website",
@@ -137,6 +134,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <CookieConsentPopup />
         <ScrollToTop />
         <FloatingContactForm />
+        <Script src="https://app.rybbit.io/api/script.js?siteId=b29239954772" strategy="afterInteractive" />
       </body>
     </html>
   )
