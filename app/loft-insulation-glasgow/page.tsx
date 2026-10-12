@@ -377,7 +377,7 @@ export default function LoftInsulationGlasgowPage() {
                           <>
                             {" "}
                             <Link href="/services#superquilt" className="text-amber-700 underline hover:text-amber-800">
-                              Read about our SuperQuilt service
+                              Read about our EasyQuilt service
                             </Link>
                             .
                           </>
@@ -543,7 +543,11 @@ export default function LoftInsulationGlasgowPage() {
               ))}
             </ul>
             <p className="text-gray-700">
-              We also work throughout Scotland, including Edinburgh. Not sure if we cover your street?{" "}
+              We also work throughout Scotland, including Edinburgh, and have a dedicated page for{" "}
+              <Link href="/loft-insulation-paisley" className="text-amber-700 underline hover:text-amber-800">
+                loft insulation in Paisley
+              </Link>
+              . Not sure if we cover your street?{" "}
               <Link href="/contact" className="text-amber-700 underline hover:text-amber-800">
                 Get in touch
               </Link>{" "}
