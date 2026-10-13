@@ -2,6 +2,9 @@ import GalleryClientPage from "./GalleryClientPage"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/gallery",
+  },
   title: "Project Gallery | Easy-Sprayaway Scotland - Before & After Photos",
   description:
     "Browse our comprehensive gallery of completed projects across Scotland. View before & after photos of SuperQuilt insulation, roof cleaning, and exterior cleaning services. Filter by location, service type, and project features.",

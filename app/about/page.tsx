@@ -5,6 +5,9 @@ import { Card } from "@/components/ui/card"
 import { Phone, Users, Award, Heart, Home, Shield, Zap } from "lucide-react"
 
 export const metadata = {
+  alternates: {
+    canonical: "/about",
+  },
   title: "About Easy-Sprayaway | Family-Run Home Services Since 2016",
   description:
     "Learn about Easy-Sprayaway, a trusted family-run business providing professional insulation and property cleaning services across the UK since 2016.",

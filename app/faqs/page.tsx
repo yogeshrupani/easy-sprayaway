@@ -5,6 +5,9 @@ import EnhancedErrorBoundary from "@/components/enhanced-error-boundary"
 import { SectionErrorFallback } from "@/components/error-fallbacks/section-error-fallback"
 
 export const metadata = {
+  alternates: {
+    canonical: "/faqs",
+  },
   title: "Frequently Asked Questions | Easy-Sprayaway",
   description:
     "Find answers to common questions about our insulation, roof cleaning, and property maintenance services.",

@@ -1,6 +1,9 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/privacy-policy",
+  },
   title: "Privacy Policy | Easy-Sprayaway",
   description: "Privacy Policy for Easy-Sprayaway - Learn how we protect and handle your personal information.",
 }

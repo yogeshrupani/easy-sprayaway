@@ -3,13 +3,14 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Phone, ChevronDown, Menu, Shield, Home, Zap, Leaf, Volume2, Building, Car } from "lucide-react"
+import { Phone, ChevronDown, Menu, Shield, Home, Zap, Leaf, Volume2, Building, Car, MapPin } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import Image from "next/image"
 
 export default function Header() {
   const [servicesOpen, setServicesOpen] = useState(false)
+  const [locationsOpen, setLocationsOpen] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
 
   const insulationServices = [
@@ -46,6 +47,17 @@ export default function Header() {
       name: "Wall & Driveway",
       href: "/services#wall-driveway",
       icon: Car,
+    },
+  ]
+
+  const locations = [
+    {
+      name: "Loft Insulation Glasgow",
+      href: "/loft-insulation-glasgow",
+    },
+    {
+      name: "Loft Insulation Paisley",
+      href: "/loft-insulation-paisley",
     },
   ]
 
@@ -243,6 +255,63 @@ export default function Header() {
             </AnimatePresence>
           </div>
 
+          {/* Locations Dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setLocationsOpen(true)}
+            onMouseLeave={() => setLocationsOpen(false)}
+          >
+            <button
+              type="button"
+              className="relative group flex items-center space-x-1 py-2 transition-colors hover:text-primary"
+              aria-expanded={locationsOpen}
+              aria-haspopup="true"
+              onClick={() => setLocationsOpen((open) => !open)}
+            >
+              <span>Locations</span>
+              <motion.div animate={{ rotate: locationsOpen ? 180 : 0 }} transition={{ duration: 0.2 }}>
+                <ChevronDown className="h-4 w-4" />
+              </motion.div>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+            </button>
+
+            <AnimatePresence>
+              {locationsOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                  className="absolute top-full left-1/2 -translate-x-1/2 pt-3 w-72 z-50"
+                >
+                  <div className="bg-white border border-gray-100 rounded-xl shadow-2xl overflow-hidden">
+                    <div className="bg-primary px-5 py-3">
+                      <h3 className="text-white font-semibold text-sm">Areas We Cover</h3>
+                    </div>
+                    <ul className="p-2">
+                      {locations.map((location) => (
+                        <li key={location.href}>
+                          <Link
+                            href={location.href}
+                            className="group flex items-center p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                            onClick={() => setLocationsOpen(false)}
+                          >
+                            <span className="flex items-center justify-center w-8 h-8 bg-primary/10 rounded-lg mr-3 group-hover:bg-primary/20 transition-colors">
+                              <MapPin className="h-4 w-4 text-primary" />
+                            </span>
+                            <span className="font-medium text-gray-900 group-hover:text-primary transition-colors text-sm">
+                              {location.name}
+                            </span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
           <Link href="/about" className="relative group py-2 transition-colors hover:text-primary">
             <span>About</span>
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
@@ -322,6 +391,22 @@ export default function Header() {
                       onClick={() => setIsOpen(false)}
                     >
                       {service.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                <div className="text-lg font-medium text-gray-900">Locations</div>
+                <div className="pl-4 space-y-3">
+                  {locations.map((location) => (
+                    <Link
+                      key={location.href}
+                      href={location.href}
+                      className="block text-sm text-gray-600 hover:text-primary transition-colors pl-2"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {location.name}
                     </Link>
                   ))}
                 </div>

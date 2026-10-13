@@ -2,6 +2,9 @@ import type { Metadata } from "next"
 import ReviewsPageClient from "./ReviewsPageClient"
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/reviews",
+  },
   title: "Customer Reviews | Easy-Sprayaway",
   description:
     "Read what our customers have to say about our SuperQuilt insulation, roof cleaning, and wall & driveway cleaning services across the UK.",

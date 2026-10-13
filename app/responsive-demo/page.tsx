@@ -10,6 +10,9 @@ import { ResponsivePage } from "@/components/layout/responsive-page"
 import { ResponsiveSection } from "@/components/layout/responsive-section"
 
 export const metadata = {
+  alternates: {
+    canonical: "/responsive-demo",
+  },
   title: "Responsive Layout Demo | Easy-Sprayaway",
   description: "Demonstration of the responsive layout system for Easy-Sprayaway website",
 }

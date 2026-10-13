@@ -5,6 +5,9 @@ import { ArrowLeft, Calculator, PiggyBank, LineChart, Lightbulb, Home, Zap } fro
 import "./energy-charts.css"
 
 export const metadata = {
+  alternates: {
+    canonical: "/energy-savings",
+  },
   title: "Energy Savings Calculator | Easy-Sprayaway",
   description:
     "Calculate how much you could save on energy bills with SuperQuilt insulation. Interactive charts and personalized savings estimates for UK homeowners.",
