@@ -18,6 +18,20 @@ const nextConfig = {
         destination: "https://www.easy-sprayaway.co.uk/:path*",
         permanent: true,
       },
+      {
+        // Behind Firebase App Hosting the public domain arrives in x-forwarded-host
+        source: "/:path*",
+        has: [{ type: "header", key: "x-forwarded-host", value: "easy-sprayaway.co.uk" }],
+        destination: "https://www.easy-sprayaway.co.uk/:path*",
+        permanent: true,
+      },
+      {
+        // Some Firebase setups pass the requested domain in x-fh-requested-host instead
+        source: "/:path*",
+        has: [{ type: "header", key: "x-fh-requested-host", value: "easy-sprayaway.co.uk" }],
+        destination: "https://www.easy-sprayaway.co.uk/:path*",
+        permanent: true,
+      },
     ]
   },
 }
